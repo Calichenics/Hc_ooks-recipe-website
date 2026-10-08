@@ -26,7 +26,7 @@
 
 const PROFILE = {
   name: "Harry Chen's Home Kitchen recipes",
-  photo: "images/harry.jpg",
+  photo: "images/harry (1).jpg",
   bio: "Hi, I'm Harry.I'm a UCL 2nd year Physics student. Every recipe here comes from one of my videos, so you can read along here or watch me make it. Use the search bar below, filter by tags or just scroll through my recipes. Please let me know what you think!",
   youtube: "https://www.youtube.com/@hc_ooks",
   tiktok: "https://www.tiktok.com/@hc_ooks",       // leave empty "" to hide
