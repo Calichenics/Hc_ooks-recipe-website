@@ -27,7 +27,7 @@
 const PROFILE = {
   name: "Harry Chen's Home Kitchen recipes",
   photo: "images/harry.jpg",
-  bio: "Hi, I'm Harry. I'm learning to cook and filming it as I go, from carbonara and mapo tofu to air-fryer karaage and my own 18th birthday cake. Every recipe here comes from one of my videos, so you can read along here or watch me make it.",
+  bio: "Hi, I'm Harry.I'm a UCL 2nd year Physics student. Every recipe here comes from one of my videos, so you can read along here or watch me make it. Use the search bar below, filter by tags or just scroll through my recipes. Please let me know what you think!",
   youtube: "https://www.youtube.com/@hc_ooks",
   tiktok: "https://www.tiktok.com/@hc_ooks",       // leave empty "" to hide
   instagram: "https://www.instagram.com/hc_ooks"  // leave empty "" to hide
@@ -40,7 +40,7 @@ const RECIPES = [
     image: "images/pesto-pasta.jpg",
     time: 30,
     tags: ["Pasta", "Chicken", "Italian", "Easy"],
-    description: "Homemade basil pesto tossed through pasta, served with herby pan-fried chicken breast.",
+    description: "Homemade basil pesto mixed with pasta, served with pan-fried chicken breast.",
     ingredients: [
       "Garlic cloves",
       "Fresh basil",
@@ -73,9 +73,9 @@ const RECIPES = [
     id: "carbonara",
     title: "Carbonara",
     image: "images/carbonara.jpg",
-    time: 25,
+    time: 15,
     tags: ["Pasta", "Pork", "Italian", "Medium"],
-    description: "Proper carbonara: crispy guanciale, egg yolks and pecorino. No cream.",
+    description: "Proper carbonara: guanciale, egg yolks and pecorino. No cream.",
     ingredients: [
       "Guanciale (or pancetta)",
       "Egg yolks plus 1 whole egg",
@@ -126,7 +126,9 @@ const RECIPES = [
       "Stir in a cornstarch slurry to thicken.",
       "Sprinkle over ground Sichuan peppercorns and top with spring onions."
     ],
-    notes: [],
+    notes: [
+       "If it aint with rice, it aint nice"
+    ],
     videos: {
       youtube: "https://www.youtube.com/shorts/RdieqLTppUg",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7465465625134009633",
@@ -137,7 +139,7 @@ const RECIPES = [
     id: "chicken-mushroom-sauce",
     title: "Pan-Fried Chicken with Mushroom Sauce",
     image: "images/chicken-mushroom-sauce.jpg",
-    time: 30,
+    time: 20,
     tags: ["Chicken", "Easy", "Dinner"],
     description: "Paprika-seasoned chicken breast with a white wine, shallot and mushroom butter sauce.",
     ingredients: [
@@ -191,7 +193,10 @@ const RECIPES = [
       "In a bowl, mix soy sauce, dark soy sauce, oyster sauce, rice wine, brown sugar and cornstarch.",
       "Add the sauce to the pan, then add the beef on low heat and top with spring onions."
     ],
-    notes: [],
+    notes: [
+       "instead of minced beef, you can use steak steak slices"
+       "it uses cheap 
+    ],
     videos: {
       youtube: "https://www.youtube.com/shorts/Lb6CAuVoSG8",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7440511035016056096",
@@ -217,29 +222,13 @@ const RECIPES = [
       "Prepare the pastry and shape it into a pie dish.",
       "Pour in the pumpkin mixture and bake for around 30–40 minutes at 180 °C."
     ],
-    notes: [],
+    notes: [
+       "Ideal with cream/ ice cream on the side!"
+    ],
     videos: {
       youtube: "https://www.youtube.com/shorts/hSxu-yq1rEc",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7432748595591367969",
       instagram: "https://www.instagram.com/reel/DB4Np5_uPJB/"
-    }
-  },
-  {
-    id: "mini-blueberry-pies",
-    title: "Mini Blueberry Pies",
-    image: "images/mini-blueberry-pies.jpg",
-    time: 45,
-    tags: ["Dessert", "Baking", "Vegetarian"],
-    description: "Little Halloween blueberry pies with spooky faces.",
-    ingredients: [],
-    steps: [],
-    notes: [
-      "There's no written recipe for this one yet, so watch the video for how I made them."
-    ],
-    videos: {
-      youtube: "https://www.youtube.com/shorts/64bfFCeEM0A",
-      tiktok: "https://www.tiktok.com/@hc_ooks/video/7431997234662690081",
-      instagram: "https://www.instagram.com/reel/DBzBcWUIYZK/"
     }
   },
   {
@@ -269,7 +258,6 @@ const RECIPES = [
     notes: [
       "I didn't have gochugaru so I used normal chilli flakes.",
       "Use mozzarella for a better cheese pull.",
-      "Let me know in the comments if you want a recipe for the rice cakes."
     ],
     videos: {
       youtube: "https://www.youtube.com/shorts/JHS0rPhFRFc",
@@ -279,7 +267,7 @@ const RECIPES = [
   },
   {
     id: "mussels",
-    title: "Mussels in Tomato and White Wine",
+    title: "Mussels in marinara sauce",
     image: "images/mussels.jpg",
     time: 25,
     tags: ["Seafood", "Easy", "Dinner"],
@@ -306,7 +294,7 @@ const RECIPES = [
       "Stir in chopped parsley and serve with bread."
     ],
     notes: [
-      "Throw away any mussels that stay closed after cooking."
+      "Throw away any mussels that stay closed after cooking. They are done when they open"
     ],
     videos: {
       youtube: "https://www.youtube.com/shorts/6p0G0IjcE-M",
@@ -349,7 +337,7 @@ const RECIPES = [
     videos: {
       youtube: "https://www.youtube.com/shorts/G_CCyllKBXk",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7427498928905391392",
-      instagram: ""
+      instagram: "https://www.instagram.com/reels/DBTywURoK4I/"
     }
   },
   {
@@ -382,11 +370,13 @@ const RECIPES = [
       "Add the beef back in and simmer for a further 10 minutes.",
       "Sauté the mushrooms, add them to the pot and garnish with parsley."
     ],
-    notes: [],
+    notes: [
+       "if you want the beef really tender, cook it low and slow. maybe around 1hr."
+    ],
     videos: {
       youtube: "https://www.youtube.com/shorts/s2khri4XmYY",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7426044121174822176",
-      instagram: ""
+      instagram: "https://www.instagram.com/reels/DBJuffjo6vk/"
     }
   },
   {
@@ -412,7 +402,7 @@ const RECIPES = [
     videos: {
       youtube: "https://www.youtube.com/shorts/xvW5MUqfnhI",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7424564777185316128",
-      instagram: ""
+      instagram: "https://www.instagram.com/reels/DA_drz7OS4f/"
     }
   },
   {
@@ -421,7 +411,7 @@ const RECIPES = [
     image: "images/mushroom-pancetta-toast.jpg",
     time: 20,
     tags: ["Pork", "Brunch", "Quick", "Easy"],
-    description: "Mushrooms and pancetta in a red wine butter sauce, piled onto toasted sourdough.",
+    description: "Mushrooms and pancetta in a red wine butter sauce,on toasted sourdough.",
     ingredients: [
       "Mushrooms",
       "Garlic",
@@ -439,13 +429,15 @@ const RECIPES = [
       "Add salt, thyme, pepper and pancetta and fry until the pancetta has darkened.",
       "Add red wine and reduce by half.",
       "Once reduced, stir in butter on low heat.",
-      "Toast the sourdough, spoon over the mushroom and pancetta sauce and sprinkle with parsley."
+      "Toast the sourdough, place the mushroom and pancetta sauce and sprinkle with parsley."
     ],
-    notes: [],
+    notes: [
+       "Looks fancy and tastes amazing, but isn't too hard to make!"
+    ],
     videos: {
       youtube: "https://www.youtube.com/shorts/Vj-736eWp1M",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7423461252757867808",
-      instagram: ""
+      instagram: "https://www.instagram.com/reels/DA3yyl0OuyH/"
     }
   },
   {
@@ -461,6 +453,7 @@ const RECIPES = [
       "Ginger",
       "Cloves",
       "Salt",
+      "Cashew nuts",
       "Cayenne pepper",
       "Garam masala",
       "Turmeric",
@@ -477,14 +470,14 @@ const RECIPES = [
       "Cut the chicken and marinate it in garlic, ginger, cloves, salt, cayenne pepper, garam masala, turmeric, yoghurt and lemon.",
       "Cook the chicken until nearly done and set aside.",
       "In the same pan, fry chopped onions in butter until softened, then add tomato paste, canned tomatoes and any seasonings you like.",
-      "Blend the sauce until smooth.",
+      "Add some Cashews and blend the sauce until smooth.",
       "Return it to the pan with the chicken, swirl in some cream and top with coriander and mint."
     ],
     notes: [],
     videos: {
       youtube: "https://www.youtube.com/shorts/wpHE57IPfto",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7422323775829478688",
-      instagram: ""
+      instagram: "https://www.instagram.com/reels/DAv55yxodK8/"
     }
   },
   {
@@ -517,13 +510,13 @@ const RECIPES = [
       "Once cooked, fold in some butter."
     ],
     notes: [
-      "My first go at jollof. If you have tips on how to improve it, let me know.",
+      "My first go at jollof. It might not be authentic so maybe find a different recipe",
       "Leave out the butter (or use a plant-based one) to keep it vegan."
     ],
     videos: {
       youtube: "",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7421572074583477537",
-      instagram: ""
+      instagram: "https://www.instagram.com/reels/DAqtRhIoy0E/"
     }
   },
   {
@@ -532,7 +525,7 @@ const RECIPES = [
     image: "images/wings-mac-and-cheese.jpg",
     time: 50,
     tags: ["Chicken", "Air Fryer", "Pasta", "Medium"],
-    description: "Spiced air-fryer wings with a baked, extra-cheesy mac and cheese.",
+    description: "Spiced air-fryer wings with a baked, cheesy mac and cheese.",
     ingredients: [
       "Chicken wings",
       "Paprika",
@@ -552,7 +545,7 @@ const RECIPES = [
     steps: [
       "Marinate the wings with paprika, oregano, cayenne pepper, garlic powder, chilli powder and salt, then coat in corn flour.",
       "Air fry the wings for around 18 minutes at 200 °C.",
-      "Melt butter in a pan and mix in flour on low heat until smooth, then add the milk and mix again.",
+      "Melt butter in a pan and mix in flour on low heat until smooth, then add the milk and mix again until a smooth consistency.",
       "Add your choice of cheeses and season with salt, pepper and paprika, then mix in the cooked macaroni.",
       "Add an extra layer of cheese on top and bake at 180 °C for 20 minutes.",
       "Serve the wings and mac and cheese topped with chopped parsley."
@@ -561,7 +554,7 @@ const RECIPES = [
     videos: {
       youtube: "https://www.youtube.com/shorts/N54CwPDyDdA",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7420794808500849953",
-      instagram: ""
+      instagram: "https://www.instagram.com/reels/DAlSqlcoK7D/"
     }
   },
   {
@@ -587,7 +580,7 @@ const RECIPES = [
     videos: {
       youtube: "https://www.youtube.com/shorts/ioY7r7ut20k",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7419765874237672737",
-      instagram: ""
+      instagram: "https://www.instagram.com/reel/DAeJnKJu_kl/"
     }
   },
   {
@@ -620,48 +613,13 @@ const RECIPES = [
       "In a pan, mix ketchup, gochujang, soy sauce and honey until saucy.",
       "Toss the chicken in the sauce and top with sesame seeds and spring onions."
     ],
-    notes: [],
+    notes: [
+       "If you don't want too much sauce, put the chicken in a bowl and drizzle the sauce on top, while tossing.
+    ],
     videos: {
       youtube: "https://www.youtube.com/shorts/JLyZ8TiAbIA",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7418640518512463137",
-      instagram: ""
-    }
-  },
-  {
-    id: "chocolate-birthday-cake",
-    title: "Chocolate Birthday Cake",
-    image: "images/chocolate-birthday-cake.jpg",
-    time: 75,
-    tags: ["Dessert", "Baking", "Vegetarian", "Medium"],
-    description: "The chocolate cake with chocolate buttercream I made for my 18th birthday.",
-    ingredients: [
-      "Flour",
-      "Baking soda",
-      "Baking powder",
-      "Cocoa powder",
-      "Salt",
-      "Sugar",
-      "Eggs",
-      "Milk",
-      "Warm water",
-      "Butter (room temperature)",
-      "Powdered sugar",
-      "Chocolate to grate on top"
-    ],
-    steps: [
-      "Mix flour, baking soda, baking powder, cocoa powder, salt and sugar in a bowl.",
-      "Add the eggs, milk and warm water and mix until you get a gooey consistency.",
-      "Bake at 200 °C for 35 minutes.",
-      "For the buttercream, whisk room-temperature butter with powdered sugar, adding more sugar every so often, plus cocoa powder for the chocolate flavour.",
-      "Once the cake has cooled, cut it in half, spread buttercream all over and grate chocolate over the top."
-    ],
-    notes: [
-      "I eyeballed the amounts, so I don't have exact measurements for this one."
-    ],
-    videos: {
-      youtube: "https://www.youtube.com/shorts/OmbGJcvhC-E",
-      tiktok: "https://www.tiktok.com/@hc_ooks/video/7416786010769575201",
-      instagram: ""
+      instagram: "https://www.instagram.com/reel/DAWXN9SuPsh/"
     }
   },
   {
@@ -670,7 +628,7 @@ const RECIPES = [
     image: "images/blueberry-pastry.jpg",
     time: 30,
     tags: ["Dessert", "Baking", "Vegetarian", "Easy"],
-    description: "Puff pastry squares folded around a jammy blueberry filling.",
+    description: "Puff pastry folded around a blueberry jam filling.",
     ingredients: [
       "Blueberries",
       "Lemon juice",
@@ -686,11 +644,13 @@ const RECIPES = [
       "Brush with egg wash and bake for around 12–15 minutes at 180–190 °C.",
       "Sprinkle with icing sugar."
     ],
-    notes: [],
+    notes: [
+       "This is my go to thing to bake, quick and easy"
+    ],
     videos: {
       youtube: "https://www.youtube.com/shorts/T6rTMS8FJa0",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7416387837647424801",
-      instagram: ""
+      instagram: "https://www.instagram.com/reel/DAGtfdeocm2/"
     }
   },
   {
@@ -699,7 +659,7 @@ const RECIPES = [
     image: "images/chicken-karaage.jpg",
     time: 50,
     tags: ["Chicken", "Japanese", "Air Fryer", "Easy"],
-    description: "Japanese-style marinated chicken, air-fried until crisp and served with lemon and mayo.",
+    description: "Karaage chicken air-fried until crisp and served with lemon and mayo.",
     ingredients: [
       "Chicken",
       "Ginger",
@@ -724,7 +684,7 @@ const RECIPES = [
     videos: {
       youtube: "https://www.youtube.com/shorts/IAS0vufhg9M",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7416027009702284576",
-      instagram: ""
+      instagram: "https://www.instagram.com/reel/DAEORDYI1lt/"
     }
   },
   {
@@ -751,12 +711,12 @@ const RECIPES = [
       "Serve with ice cream."
     ],
     notes: [
-      "Try it with my 3-ingredient vanilla ice cream."
+      "Try it with my 3-ingredient vanilla ice cream!"
     ],
     videos: {
       youtube: "https://www.youtube.com/shorts/C-SHF39e5TE",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7414871443869158688",
-      instagram: ""
+      instagram: "https://www.instagram.com/reel/C_8MF08ImXI/"
     }
   },
   {
@@ -765,7 +725,7 @@ const RECIPES = [
     image: "images/vanilla-ice-cream.jpg",
     time: 300,
     tags: ["Dessert", "Vegetarian", "Easy"],
-    description: "No-churn vanilla ice cream with just three ingredients.",
+    description: "vanilla ice cream with just three ingredients.",
     ingredients: [
       "Heavy cream",
       "Condensed milk",
@@ -782,7 +742,7 @@ const RECIPES = [
     videos: {
       youtube: "https://www.youtube.com/shorts/SdO8BM73rmQ",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7413846208571051296",
-      instagram: ""
+      instagram: "https://www.instagram.com/reel/C_1CpJXOVci/"
     }
   },
   {
@@ -820,7 +780,7 @@ const RECIPES = [
     videos: {
       youtube: "https://www.youtube.com/shorts/iqLU7WnloNo",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7413486269969288480",
-      instagram: ""
+      instagram: "https://www.instagram.com/reel/C_ylHruu0gh/"
     }
   },
   {
@@ -853,46 +813,13 @@ const RECIPES = [
       "Crack in two eggs and cook covered for as long as you like, depending on how you like your eggs.",
       "Top with herbs and black pepper and serve with pitta."
     ],
-    notes: [],
+    notes: [
+       "Dont cook for too long if you want a runny yolk, which is ideal"
+    ],
     videos: {
       youtube: "https://www.youtube.com/shorts/p1c_ghJJzbg",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7412023366376230177",
-      instagram: ""
-    }
-  },
-  {
-    id: "smash-burger",
-    title: "Smash Burger with Sweet Potato Fries",
-    image: "images/smash-burger.jpg",
-    time: 45,
-    tags: ["Beef", "Medium", "Dinner"],
-    description: "Crispy-edged smash burgers on caramelised onions with oven-baked sweet potato fries.",
-    ingredients: [
-      "Sweet potatoes",
-      "Salt and pepper",
-      "Oil",
-      "Minced beef",
-      "Garlic powder",
-      "Butter",
-      "Onions",
-      "Cheese slices (optional)",
-      "Burger buns",
-      "Burger sauce",
-      "Toppings of your choice"
-    ],
-    steps: [
-      "Cut the sweet potato into fries and toss in a bowl with salt, pepper and a drizzle of oil.",
-      "Bake on a tray at 180 °C for 25–30 minutes.",
-      "Mix the minced beef with salt, pepper and garlic powder, then shape into small balls.",
-      "Sauté some onions in butter, add a meatball and smash it flat (with a burger press or anything flat and baking paper).",
-      "After a minute or two, flip the patty onto the onions and press down again. Add a slice of cheese if you like.",
-      "Lightly toast the buns, then add burger sauce, the patty and your toppings."
-    ],
-    notes: [],
-    videos: {
-      youtube: "",
-      tiktok: "https://www.tiktok.com/@hc_ooks/video/7396297590284848416",
-      instagram: ""
+      instagram: "https://www.instagram.com/reel/C_obISAo5_4/"
     }
   },
   {
@@ -932,7 +859,7 @@ const RECIPES = [
     videos: {
       youtube: "",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7394441239317286176",
-      instagram: ""
+      instagram: "https://www.instagram.com/reel/C9uZp18OvJ_/"
     }
   },
   {
@@ -970,7 +897,7 @@ const RECIPES = [
     videos: {
       youtube: "",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7389054400800607520",
-      instagram: ""
+      instagram: "https://www.instagram.com/reel/C9I-8MoSGAV/"
     }
   },
   {
@@ -985,7 +912,7 @@ const RECIPES = [
       "Onions",
       "Paprika",
       "Salt and pepper",
-      "Garlic powder",
+      "grated Garlic ",
       "Cayenne pepper",
       "Turmeric",
       "Garam masala",
@@ -1000,7 +927,7 @@ const RECIPES = [
       "Fresh mint"
     ],
     steps: [
-      "Dice the onions and chicken and season the chicken with paprika, salt, pepper, garlic powder, cayenne pepper and turmeric.",
+      "Dice the onions and chicken and season the chicken with paprika, salt, pepper, garlic, cayenne pepper and turmeric.",
       "Cook the chicken in a pan and set aside.",
       "Cook the onions with salt, turmeric, garam masala, curry powder, ground cloves, ground ginger and ground coriander (add chilli if you like).",
       "Mix in the tomato paste, then add the canned tomatoes and stir.",
@@ -1015,7 +942,7 @@ const RECIPES = [
     videos: {
       youtube: "",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7387372571546684704",
-      instagram: ""
+      instagram: "https://www.instagram.com/reel/C89NAC_ofio/"
     }
   },
   {
@@ -1031,7 +958,7 @@ const RECIPES = [
       "Chicken breast or thigh",
       "Salt and pepper",
       "Paprika",
-      "Garlic powder",
+      "Garlic",
       "Cayenne pepper",
       "Cornflour",
       "Red onions",
@@ -1044,20 +971,22 @@ const RECIPES = [
     ],
     steps: [
       "Boil the pasta, adding spinach near the end if you like.",
-      "Season the chicken with salt, pepper, paprika, garlic powder and cayenne pepper, then very lightly coat in cornflour.",
+      "Season the chicken with salt, pepper, paprika, garlic and cayenne pepper, then very lightly coat in cornflour.",
       "Very finely chop the red onions and roughly chop the red peppers.",
       "Cook the chicken in oil until done, then take it out, leaving the oil in the pan.",
-      "Fry the onions on medium until softened (add salt and paprika here if you like), then mix in a little over a teaspoon of tomato purée.",
+      "Fry the onions and a little garlic on medium until softened (add salt and paprika here if you like), then mix in a little over a teaspoon of tomato purée.",
       "Add the peppers and sun-dried tomatoes (add their oil first if they came in some) and cook until the peppers soften. Turn the heat to low.",
       "Add the spinach and a squeeze of lemon if using.",
       "Stir in about 4 tablespoons of pasta water, then about a quarter cup of heavy cream.",
       "Add the pasta and chicken, mix and garnish with parsley."
     ],
-    notes: [],
+    notes: [
+       "people say this is my best dish"
+    ],
     videos: {
       youtube: "",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7385863186764844320",
-      instagram: ""
+      instagram: "https://www.instagram.com/reel/C8y5G_ZIxBs/"
     }
   },
   {
@@ -1091,7 +1020,7 @@ const RECIPES = [
     videos: {
       youtube: "",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7384713788416707873",
-      instagram: ""
+      instagram: "https://www.instagram.com/reel/C8q5fRCo3JT/"
     }
   },
   {
@@ -1125,7 +1054,7 @@ const RECIPES = [
     videos: {
       youtube: "",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7383239785525087520",
-      instagram: ""
+      instagram: "https://www.instagram.com/reel/C8gsyWiowqx/"
     }
   },
   {
@@ -1161,7 +1090,7 @@ const RECIPES = [
     videos: {
       youtube: "",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7382114743445753121",
-      instagram: ""
+      instagram: "https://www.instagram.com/reel/C8Y3xynIhtu/"
     }
   },
   {
@@ -1195,11 +1124,12 @@ const RECIPES = [
     ],
     notes: [
       "Most of the time is freezing and marinating. The cooking takes about 15 minutes."
+       "if you have thing slices of beef, no need to freeze it"
     ],
     videos: {
       youtube: "",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7380738149565140256",
-      instagram: ""
+      instagram: "https://www.instagram.com/reel/C8PUpn6osra/"
     }
   },
   {
@@ -1215,7 +1145,7 @@ const RECIPES = [
       "Chilli powder",
       "Yoghurt",
       "Lemon",
-      "Garlic and ginger paste",
+      "Garlic and ginger",
       "Cardamom seeds",
       "Mint",
       "Coriander",
@@ -1248,7 +1178,7 @@ const RECIPES = [
     videos: {
       youtube: "",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7379733663774248225",
-      instagram: ""
+      instagram: "https://www.instagram.com/reel/C8IVNBiIa4S/"
     }
   },
   {
@@ -1288,11 +1218,13 @@ const RECIPES = [
       "Optionally add sun-dried tomatoes and spinach and cook until the spinach wilts.",
       "Mix in the chicken and garnish with chopped parsley."
     ],
-    notes: [],
+    notes: [
+       "The first recipe on my channel!"
+    ],
     videos: {
       youtube: "",
       tiktok: "https://www.tiktok.com/@hc_ooks/video/7378253251180891425",
-      instagram: ""
+      instagram: "https://www.instagram.com/reel/C7-Ht1UIRil/"
     }
   }
 ];
