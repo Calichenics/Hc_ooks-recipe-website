@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recipes</title>
+  <meta name="description" content="Home-cooked recipes from my kitchen and YouTube channel.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=gambetta@400,500,600&f[]=switzer@400,500,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to recipes</a>
+
+  <main id="main">
+    <!-- Home view -->
+    <section id="home-view">
+      <section class="intro" aria-labelledby="intro-name">
+        <div class="name-loaf">
+          <svg viewBox="0 0 640 200" aria-hidden="true" preserveAspectRatio="none">
+            <path class="loaf-crust" vector-effect="non-scaling-stroke" d="M24 182V100C10 94 4 78 6 60 12 22 70 8 320 8s308 14 314 52c2 18-4 34-18 40v82a12 12 0 0 1-12 12H36a12 12 0 0 1-12-12Z"/>
+            <path class="loaf-inner" vector-effect="non-scaling-stroke" d="M40 172V92C28 87 22 76 24 62 29 34 84 24 320 24s291 10 296 38c2 14-4 25-16 30v80a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8Z"/>
+          </svg>
+          <h1 id="intro-name"></h1>
+        </div>
+        <img id="intro-photo" class="intro-photo" src="" alt="" width="200" height="200">
+        <div class="intro-text">
+          <p id="intro-bio" class="intro-bio"></p>
+          <div class="intro-links" id="intro-links"></div>
+        </div>
+      </section>
+
+      <section class="finder" aria-label="Search recipes">
+        <div class="search">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <input id="search" type="search" placeholder="Search dishes, ingredients…" autocomplete="off" aria-label="Search recipes">
+        </div>
+        <div class="tags-filter" id="tag-filter" role="group" aria-label="Filter by tag"></div>
+        <div class="results-meta">
+          <span id="count"></span>
+          <button id="clear" class="clear" hidden>Clear filters</button>
+        </div>
+      </section>
+
+      <ul class="recipe-list" id="recipe-list"></ul>
+      <p class="empty" id="empty" hidden>No recipes match that. Try a different word or remove a tag.</p>
+    </section>
+
+    <!-- Single recipe view -->
+    <article id="recipe-view" class="recipe" hidden></article>
+  </main>
+
+  <footer class="footer">
+    <p>Made with love and peace (and more love)</p>
+  </footer>
+
+  <script src="recipes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
