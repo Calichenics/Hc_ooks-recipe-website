@@ -195,7 +195,6 @@ const RECIPES = [
     ],
     notes: [
        "instead of minced beef, you can use steak steak slices"
-       "it uses cheap 
     ],
     videos: {
       youtube: "https://www.youtube.com/shorts/Lb6CAuVoSG8",
@@ -614,7 +613,7 @@ const RECIPES = [
       "Toss the chicken in the sauce and top with sesame seeds and spring onions."
     ],
     notes: [
-       "If you don't want too much sauce, put the chicken in a bowl and drizzle the sauce on top, while tossing.
+       "If you don't want too much sauce, put the chicken in a bowl and drizzle the sauce on top, while tossing."
     ],
     videos: {
       youtube: "https://www.youtube.com/shorts/JLyZ8TiAbIA",
@@ -1123,7 +1122,7 @@ const RECIPES = [
       "Serve the bulgogi over rice and garnish with spring onions and sesame seeds."
     ],
     notes: [
-      "Most of the time is freezing and marinating. The cooking takes about 15 minutes."
+      "Most of the time is freezing and marinating. The cooking takes about 15 minutes.",
        "if you have thing slices of beef, no need to freeze it"
     ],
     videos: {
