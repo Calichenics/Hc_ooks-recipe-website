@@ -1084,7 +1084,8 @@ const RECIPES = [
       "Garnish with fresh parsley and a few drops of cream."
     ],
     notes: [
-      "Swap the chicken stock for vegetable stock to make it fully vegetarian."
+      "Swap the chicken stock for vegetable stock to make it fully vegetarian.",
+      "best served with toast"
     ],
     videos: {
       youtube: "",
