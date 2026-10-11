@@ -117,11 +117,11 @@ Tags can be anything, such as `"Easy"`, `"Hard"`, `"Chicken"` or `"Under 30 min"
 
 ### Changing colours (optional)
 Open `styles.css`. The colours are listed at the very top under `:root`:
-- `--bg` is the oak background
-- `--accent` is the golden-crust colour used for buttons and the bread outline
-- `--surface` is the colour of the recipe bars
+- `--bg` is the white page background
+- `--band` is the light grey strip behind your intro and each recipe's header
+- `--accent` is the green used for buttons and selected filters
 
-Colours are written as hex codes like `#dcc096`. Search "colour picker" on Google to find new ones.
+Colours are written as hex codes like `#3b7a2a`. Search "colour picker" on Google to find new ones.
 
 ### Files you don't need to touch
 - `index.html` – the page structure

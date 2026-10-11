@@ -26,8 +26,8 @@
 
 const PROFILE = {
   name: "Harry Chen's Home Kitchen recipes",
-  photo: "images/harry (1).jpg",
-  bio: "Hi, I'm Harry.I'm a UCL 2nd year Physics student. Every recipe here comes from one of my videos, so you can read along here or watch me make it. Use the search bar below, filter by tags or just scroll through my recipes. Please let me know what you think!",
+  photo: "images/harry.jpg",
+  bio: "Hi, I'm Harry. I'm a UCL 2nd year Physics student. Every recipe here comes from one of my videos, so you can read along here or watch me make it. Use the search bar below, filter by tags or just scroll through my recipes. Please let me know what you think!",
   youtube: "https://www.youtube.com/@hc_ooks",
   tiktok: "https://www.tiktok.com/@hc_ooks",       // leave empty "" to hide
   instagram: "https://www.instagram.com/hc_ooks"  // leave empty "" to hide
@@ -194,7 +194,8 @@ const RECIPES = [
       "Add the sauce to the pan, then add the beef on low heat and top with spring onions."
     ],
     notes: [
-       "instead of minced beef, you can use steak steak slices"
+       "Instead of minced beef, you can use steak slices.",
+       "It uses cheap"
     ],
     videos: {
       youtube: "https://www.youtube.com/shorts/Lb6CAuVoSG8",
@@ -1084,8 +1085,7 @@ const RECIPES = [
       "Garnish with fresh parsley and a few drops of cream."
     ],
     notes: [
-      "Swap the chicken stock for vegetable stock to make it fully vegetarian.",
-      "best served with toast"
+      "Swap the chicken stock for vegetable stock to make it fully vegetarian."
     ],
     videos: {
       youtube: "",
@@ -1124,7 +1124,7 @@ const RECIPES = [
     ],
     notes: [
       "Most of the time is freezing and marinating. The cooking takes about 15 minutes.",
-       "if you have thing slices of beef, no need to freeze it"
+       "if you have thin slices of beef, no need to freeze it"
     ],
     videos: {
       youtube: "",

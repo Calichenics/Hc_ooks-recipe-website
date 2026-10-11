@@ -11,6 +11,9 @@
     instagram: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg>'
   };
 
+  const chefIcon = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17h10v3H7zM6 14a4 4 0 0 1 1-7.9A5 5 0 0 1 17 6.1 4 4 0 0 1 18 14v3H6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>';
+  const difficulty = (r) => (r.tags || []).find((t) => ["Easy", "Medium", "Hard"].includes(t)) || "";
+
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
   function formatTime(min) {
@@ -33,12 +36,12 @@
     $("#intro-name").textContent = PROFILE.name;
     $("#intro-bio").textContent = PROFILE.bio || "";
     const img = $("#intro-photo");
-    img.src = PROFILE.photo; img.alt = "Photo of " + PROFILE.name;
-    let links = "";
-    if (PROFILE.youtube) links += `<a class="btn btn-primary" href="${esc(PROFILE.youtube)}" target="_blank" rel="noopener">${ICONS.youtube}My YouTube channel</a>`;
-    if (PROFILE.tiktok) links += `<a class="btn" href="${esc(PROFILE.tiktok)}" target="_blank" rel="noopener">${ICONS.tiktok}TikTok</a>`;
-    if (PROFILE.instagram) links += `<a class="btn" href="${esc(PROFILE.instagram)}" target="_blank" rel="noopener">${ICONS.instagram}Instagram</a>`;
-    $("#intro-links").innerHTML = links;
+    img.src = PROFILE.photo; img.alt = "Photo of Harry Chen";
+    const socials = [["youtube", "YouTube"], ["tiktok", "TikTok"], ["instagram", "Instagram"]].filter(([k]) => PROFILE[k]);
+    $("#intro-links").innerHTML = socials.map(([k, label], i) =>
+      `<a class="btn${i === 0 ? " btn-solid" : ""}" href="${esc(PROFILE[k])}" target="_blank" rel="noopener">${ICONS[k]}${label}</a>`).join("");
+    $("#utility-links").innerHTML = socials.map(([k, label]) =>
+      `<a href="${esc(PROFILE[k])}" target="_blank" rel="noopener">${label}</a>`).join("");
   }
 
   // ---------- Tags ----------
@@ -69,13 +72,16 @@
     $("#recipe-list").innerHTML = list
       .map((r) => `
         <li>
-          <a class="bar" href="#/recipe/${encodeURIComponent(r.id)}">
-            <img src="${esc(r.image)}" alt="" loading="lazy" width="76" height="76">
-            <div class="bar-body">
-              <h3 class="bar-title">${esc(r.title)}</h3>
-              <div class="bar-tags">${(r.tags || []).map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>
+          <a class="row" href="#/recipe/${encodeURIComponent(r.id)}">
+            <img src="${esc(r.image)}" alt="" loading="lazy" width="168" height="168">
+            <div>
+              <h3 class="row-title">${esc(r.title)}</h3>
+              ${r.description ? `<p class="row-desc">${esc(r.description)}</p>` : ""}
+              <div class="meta">
+                <span>${clockIcon}${formatTime(r.time)}</span>
+                ${difficulty(r) ? `<span>${chefIcon}${difficulty(r)}</span>` : ""}
+              </div>
             </div>
-            <span class="time">${clockIcon}${formatTime(r.time)}</span>
           </a>
         </li>`)
       .join("");
@@ -93,24 +99,46 @@
     const vid = youtubeId(v.youtube || r.youtube);
     const platforms = [["youtube", "YouTube"], ["tiktok", "TikTok"], ["instagram", "Instagram"]];
     const watch = platforms.filter(([k]) => v[k] || (k === "youtube" && r.youtube))
-      .map(([k, label]) => `<a class="btn${k === "youtube" ? " btn-primary" : ""}" href="${esc(v[k] || r.youtube)}" target="_blank" rel="noopener">${ICONS[k]}Watch on ${label}</a>`).join("");
+      .map(([k, label]) => `<a class="btn${k === "youtube" ? " btn-solid" : ""}" href="${esc(v[k] || r.youtube)}" target="_blank" rel="noopener">${ICONS[k]}Watch on ${label}</a>`).join("");
+    const firstK = platforms.map(([k, l]) => [k, l]).find(([k]) => v[k] || (k === "youtube" && r.youtube));
+    const firstLink = firstK ? (v[firstK[0]] || r.youtube) : "";
+    const firstLabel = firstK ? firstK[1] : "";
+    const notes = Array.isArray(r.notes) ? r.notes : (r.notes ? [r.notes] : []);
+    const ing = r.ingredients || [], steps = r.steps || [];
     view.innerHTML = `
-      <a class="back" href="#/">&larr; All recipes</a>
-      <img class="recipe-hero" src="${esc(r.image)}" alt="${esc(r.title)}">
-      <h1>${esc(r.title)}</h1>
-      ${r.description ? `<p class="recipe-desc">${esc(r.description)}</p>` : ""}
-      <div class="recipe-meta">
-        <span class="time">${clockIcon}${formatTime(r.time)}</span>
-        ${r.servings ? `<span class="plain">Serves ${esc(r.servings)}</span>` : ""}
-        ${(r.tags || []).map((t) => `<span class="tag">${esc(t)}</span>`).join("")}
+      <nav class="crumbs wrap" aria-label="Breadcrumb"><a href="#/">Home</a><span aria-hidden="true">›</span><a href="#/">Recipes</a><span aria-hidden="true">›</span><span>${esc(r.title)}</span></nav>
+      <section class="recipe-hero band">
+        <div class="wrap recipe-hero-inner">
+          <img src="${esc(r.image)}" alt="${esc(r.title)}">
+          <div>
+            <h1>${esc(r.title)}</h1>
+            ${r.description ? `<p class="lede">${esc(r.description)}</p>` : ""}
+            <div class="facts">
+              <div class="fact">Total: <strong>${formatTime(r.time)}</strong></div>
+              ${difficulty(r) ? `<div class="fact"><strong>${difficulty(r)}</strong></div>` : ""}
+              ${r.servings ? `<div class="fact">Serves <strong>${esc(r.servings)}</strong></div>` : ""}
+            </div>
+            <div class="tag-row">${(r.tags || []).filter((t) => t !== difficulty(r)).map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>
+            ${watch ? `<div class="watch-links">${watch}</div>` : ""}
+          </div>
+        </div>
+      </section>
+      <div class="wrap recipe-body">
+        <section>${ing.length ? `<h2>Ingredients</h2><ul class="ingredients">${ing.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>` : ""}</section>
+        <section>
+          ${steps.length ? `<h2>Method</h2><ol class="steps">${steps.map((x) => `<li>${esc(x)}</li>`).join("")}</ol>` : ""}
+          ${notes.length ? `<div class="tips"><h3>Harry's tips</h3><ul>${notes.map((n) => `<li>${esc(n)}</li>`).join("")}</ul></div>` : ""}
+          ${firstLink ? `<section class="video" id="video">
+            <h3>Watch the video</h3>
+            <a class="video-card" href="${esc(firstLink)}" target="_blank" rel="noopener" ${vid ? `data-yt="${vid}"` : ""}>
+              <img src="${esc(r.image)}" alt="">
+              <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+              <span class="video-cap">Watch me make it${vid ? "" : ` on ${firstLabel}`}</span>
+            </a>
+            <div class="watch-links">${watch}</div>
+          </section>` : ""}
+        </section>
       </div>
-      <div class="recipe-cols">
-        ${(r.ingredients || []).length ? `<section><h2>Ingredients</h2><ul class="ingredients">${r.ingredients.map((i) => `<li>${esc(i)}</li>`).join("")}</ul></section>` : ""}
-        ${(r.steps || []).length ? `<section><h2>Method</h2><ol class="steps">${r.steps.map((s) => `<li>${esc(s)}</li>`).join("")}</ol></section>` : ""}
-      </div>
-      ${notesHtml(r.notes)}
-      ${watch ? `<section class="watch"><h2>Watch me make it</h2><div class="watch-links">${watch}</div></section>` : ""}
-      ${vid ? `<section class="video"><div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/${vid}" title="${esc(r.title)} video" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></section>` : ""}
     `;
     document.title = r.title + " · " + PROFILE.name;
   }
@@ -142,7 +170,10 @@
   }
 
   // ---------- Events ----------
-  $("#search").addEventListener("input", (e) => { state.query = e.target.value; renderList(); });
+  $("#search").addEventListener("input", (e) => {
+    state.query = e.target.value; renderList();
+    if (location.hash.startsWith("#/recipe/")) location.hash = "#/";
+  });
   $("#tag-filter").addEventListener("click", (e) => {
     const b = e.target.closest(".chip"); if (!b) return;
     const t = b.dataset.tag;
@@ -153,6 +184,17 @@
   $("#clear").addEventListener("click", () => {
     state.query = ""; state.tags.clear(); $("#search").value = "";
     renderTagFilter(); renderList();
+  });
+  $("#recipe-view").addEventListener("click", (e) => {
+    const card = e.target.closest(".video-card[data-yt]"); if (!card) return;
+    e.preventDefault();
+    const id = card.dataset.yt;
+    const wrap = document.createElement("div"); wrap.className = "video-frame";
+    wrap.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&playsinline=1" title="Recipe video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+    card.replaceWith(wrap);
+    const fb = document.createElement("p"); fb.className = "video-fallback";
+    fb.innerHTML = `Video not playing? <a href="${card.href}" target="_blank" rel="noopener">Open it on YouTube</a>`;
+    wrap.after(fb);
   });
   window.addEventListener("hashchange", route);
 
